@@ -41,7 +41,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           'Register',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.yellow,
         elevation: 0,
       ),
       body: SafeArea(

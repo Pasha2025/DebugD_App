@@ -1,3 +1,4 @@
+import 'package:debugd/DashboardScreen.dart';
 import 'package:debugd/LoginScreen.dart';
 import 'package:debugd/RegistrationScreen.dart';
 import 'package:flutter/material.dart';
@@ -134,7 +135,7 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              "At Debugd, we are passionate about delivering tailored solutions that drive measurable results. With a focus on innovation, reliability, and excellence, our team works relentlessly to bring your ideas to life. Whether you’re a startup looking to make your mark or an enterprise ready to scale, we’re here to help you every step of the way.",
+              "At Debugd, we are passionate about delivering tailored solutions that drive measurable results. With a focus on innovation, reliability.",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18),
             ),
@@ -208,15 +209,45 @@ class ServicesScreen extends StatelessWidget {
 }
 
 // ✅ Profile Page
+// class ProfileScreen extends StatelessWidget {
+//   const ProfileScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Profile")),
+//       body: Center(
+//         child: Text("Profile Page", style: TextStyle(fontSize: 24)),
+//       ),
+//     );
+//   }
+// }
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Profile")),
+      appBar: AppBar(title: const Text("Profile")),
       body: Center(
-        child: Text("Profile Page", style: TextStyle(fontSize: 24)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Profile Page", style: TextStyle(fontSize: 24)),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        DashboardScreen(), // Navigate back to Home
+                  ),
+                );
+              },
+              child: const Text("GO to Dashboard"),
+            ),
+          ],
+        ),
       ),
     );
   }

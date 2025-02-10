@@ -14,6 +14,7 @@ analyzer:
     missing_required_param: error
     depend_on_referenced_packages: ignore
     file_names: ignore
+    unused_import: ignore
    
 
 include: package:flutter_lints/flutter.yaml
